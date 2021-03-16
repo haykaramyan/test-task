@@ -1,0 +1,31 @@
+<form [formGroup]="profileData">
+  <div class="p-fluid">
+    <div class="p-field">
+      <label for="">Firstname</label>
+      <input formControlName="firstName" type="text" pInputText />
+    </div>
+    <div class="p-field">
+      <label for="">Lastname</label>
+      <input formControlName="lastName"   type="text" pInputText />
+    </div>
+    <div class="p-field">
+      <label for="">email</label>
+      <input formControlName="email"   type="text" pInputText />
+    </div>
+    <div class="p-field">
+      <label for="">address</label>
+      <textarea formControlName="address" id="address" type="text" rows="4" pInputTextarea></textarea>
+    </div>
+    <div class="p-field">
+      <label for="">Age</label>
+      <p-dropdown inputId="state" [options]="ages" formControlName="age" placeholder="Select"
+                  optionLabel="name"></p-dropdown>
+    </div>
+    <div class="p-field" style="width: 20%; padding: 20px 0;">
+      <p-button label="Submit" icon="pi pi-check" (click)="save()" [disabled]="profileData.invalid"></p-button>
+    </div>
+
+  </div>
+
+</form>
+<p-toast></p-toast>

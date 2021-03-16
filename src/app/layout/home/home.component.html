@@ -1,0 +1,46 @@
+<div class="p-field p-col-12 p-md-4">
+
+  <p-calendar (onSelect)="getDate($event)"
+  ></p-calendar>
+  <div *ngIf="userInfo">
+    <h3>Hi {{userInfo['firstName']}} {{userInfo['lastName']}} </h3>
+  </div>
+</div>
+
+
+
+<div *ngIf="articleData && articleData.length>0">
+  <p-table #dt [value]="articleData" [rows]="10" [paginator]="true"  [rowHover]="true" dataKey="id"
+           currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [showCurrentPageReport]="true">
+    <ng-template pTemplate="header">
+      <tr>
+        <th pSortableColumn="name">name <p-sortIcon field="name"></p-sortIcon></th>
+        <th>date</th>
+        <th pSortableColumn="price">Unit Price <p-sortIcon field="price"></p-sortIcon></th>
+        <th pSortableColumn="quantity" >Number <p-sortIcon field="quantity"></p-sortIcon></th>
+        <th pSortableColumn="total">Total <p-sortIcon field="total"></p-sortIcon></th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-article let-index>
+      <tr>
+        <td>{{article.name}}</td>
+        <td>{{article.date}}</td>
+        <td>{{article.price | currency:'USD'}}</td>
+        <td>
+          <span class="count-span" (click)="changeProductQuantity(article, -1)">-</span>
+          <span>{{article.quantity}}</span>
+          <span class="count-span" (click)="changeProductQuantity(article, 1)">+</span>
+        </td>
+        <td><span >{{article.total | currency:'USD'}}</span></td>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="summary">
+      <div class="p-d-flex p-ai-center p-jc-between">
+        In total there are {{articleData ? articleData.length : 0 }} article.
+      </div>
+    </ng-template>
+  </p-table>
+</div>
+<div *ngIf="!articleData || articleData.length<1">
+  <p class="no-match">No matching Articles</p>
+</div>

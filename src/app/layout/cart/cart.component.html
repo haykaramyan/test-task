@@ -1,0 +1,49 @@
+<div *ngIf="articleData && articleData.length>0" class="card">
+
+  <p-toolbar styleClass="p-mb-4">
+    <ng-template pTemplate="left">
+        <button pButton pRipple [label]="Delete" icon="pi pi-trash" class="p-button-danger" (click)="deleteSelectedArticle()" [disabled]="!articleData || !articleData.length"></button>
+    </ng-template>
+  </p-toolbar>
+
+  <p-table #dt [value]="articleData" [rows]="10" [paginator]="true"  [(selection)]="selectedArticle" [rowHover]="true" dataKey="id"
+           currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [showCurrentPageReport]="true">
+    <ng-template pTemplate="header">
+      <tr>
+        <th style="width: 3rem">
+          <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+        </th>
+        <th pSortableColumn="name">name <p-sortIcon field="name"></p-sortIcon></th>
+        <th>date</th>
+        <th pSortableColumn="price">Unit Price <p-sortIcon field="price"></p-sortIcon></th>
+        <th pSortableColumn="quantity" >Number <p-sortIcon field="quantity"></p-sortIcon></th>
+        <th pSortableColumn="total">Total <p-sortIcon field="total"></p-sortIcon></th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-article let-index>
+      <tr>
+        <td>
+          <p-tableCheckbox [value]="article"></p-tableCheckbox>
+        </td>
+        <td>{{article.name}}</td>
+        <td>{{article.date}}</td>
+        <td>{{article.price | currency:'USD'}}</td>
+        <td>
+          <span>{{article.quantity}}</span>
+        </td>
+        <td><span >{{article.total | currency:'USD'}}</span></td>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="summary">
+      <div class="p-d-flex p-ai-center p-jc-between">
+        In total there are {{articleData ? articleData.length : 0 }} article.
+      </div>
+    </ng-template>
+  </p-table>
+</div>
+<div *ngIf="!articleData || articleData.length<1">
+  <p class="no-match">No matching Articles</p>
+</div>
+
+<p-confirmDialog [style]="{width: '450px'}"></p-confirmDialog>
+<p-toast></p-toast>

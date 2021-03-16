@@ -1,0 +1,124 @@
+{
+  "articles": [
+    {
+      "id": 1,
+      "name": "test 1",
+      "price": 5,
+      "date": "2021-03-17",
+      "quantity": 0,
+      "total": 0
+    },
+    {
+      "id": 2,
+      "name": "Test 2",
+      "price": 10,
+      "date": "2021-03-17",
+      "quantity": 0,
+      "total": 0
+    },
+    {
+      "id": 3,
+      "name": "Test 3",
+      "price": 15,
+      "date": "2020-09-10",
+      "quantity": 0,
+      "total": 0
+    },
+    {
+      "id": 4,
+      "name": "test 4",
+      "price": 20,
+      "date": "2020-09-10",
+      "quantity": 0,
+      "total": 0
+    },
+    {
+      "id": 5,
+      "name": "test 5",
+      "price": 25,
+      "date": "2021-02-07",
+      "quantity": 0,
+      "total": 0
+    },
+    {
+      "id": 6,
+      "name": "test 6",
+      "price": 30,
+      "date": "2021-03-17",
+      "quantity": 0,
+      "total": 0
+    },
+    {
+      "id": 7,
+      "name": "test 7",
+      "price": 35,
+      "date": "2021-03-04",
+      "quantity": 0,
+      "total": 0
+    },
+    {
+      "id": 8,
+      "name": "test 8",
+      "price": 40,
+      "date": "2021-04-20",
+      "quantity": 0,
+      "total": 0
+    },
+    {
+      "id": 9,
+      "name": "test 9",
+      "price": 45,
+      "date": "2021-04-20",
+      "quantity": 0,
+      "total": 0
+    },
+    {
+      "id": 10,
+      "name": "test 10",
+      "price": 50,
+      "date": "2021-04-20",
+      "quantity": 0,
+      "total": 0
+    },
+    {
+      "id": 11,
+      "name": "test 11",
+      "price": 55,
+      "date": "2021-06-14",
+      "quantity": 0,
+      "total": 0
+    },
+    {
+      "id": 12,
+      "name": "test 12",
+      "price": 60,
+      "date": "2021-06-14",
+      "quantity": 0,
+      "total": 0
+    },
+    {
+      "id": 13,
+      "name": "test 13",
+      "price": 65,
+      "date": "2021-03-14",
+      "quantity": 0,
+      "total": 0
+    },
+    {
+      "id": 14,
+      "name": "test 14",
+      "price": 70,
+      "date": "2021-03-14",
+      "quantity": 0,
+      "total": 0
+    },
+    {
+      "id": 15,
+      "name": "test 14",
+      "price": 75,
+      "date": "2021-01-01",
+      "quantity": 0,
+      "total": 0
+    }
+  ]
+}
